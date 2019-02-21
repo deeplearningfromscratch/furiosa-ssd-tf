@@ -35,6 +35,11 @@ setup(
     # packages=find_namespace_packages(exclude=namespace_packages_exclude),
     packages=[
         'furiosa_ssd_tf',
+        'furiosa_ssd_tf.nets',
+        'furiosa_ssd_tf.preprocessing',
+        'furiosa_ssd_tf.tf_extended',
+        'furiosa_ssd_tf.datasets',
+        'furiosa_ssd_tf.deployment',
         'nets',
         'preprocessing',
         'tf_extended',
