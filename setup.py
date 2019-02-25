@@ -1,26 +1,11 @@
 # coding: utf-8
-from setuptools import setup, find_namespace_packages
+from setuptools import setup
 
 setup_requires = [
 ]
 
 install_requires = [
     'tensorflow >= 1.12.0',
-]
-
-namespace_packages_exclude = [
-    'tests',
-    'tests.*',
-    'venv',
-    'venv.*',
-    'build',
-    'build.*',
-    'docs',
-    'docs.*',
-    'assets',
-    'assets.*',
-    'dist',
-    'dist.*',
 ]
 
 dependency_links = [
@@ -32,7 +17,6 @@ setup(
     description='Furiosa ML Framework, setuptools version of https://github.com/balancap/SSD-Tensorflow',
     author='Sol Kim',
     author_email='skim@furiosa.ai',
-    # packages=find_namespace_packages(exclude=namespace_packages_exclude),
     packages=[
         'furiosa_ssd_tf',
         'furiosa_ssd_tf.nets',
