@@ -32,3 +32,6 @@ ssd-tensorflow.sublime-project
 build/
 dist/
 venv/
+
+# pycharm
+.idea/
