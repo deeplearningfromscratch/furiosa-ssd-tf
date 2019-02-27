@@ -21,6 +21,7 @@ from deployment import model_deploy
 from nets import nets_factory
 from preprocessing import preprocessing_factory
 import tf_utils
+from get_init_fn_mobilenet import get_init_fn_mobilenet
 
 slim = tf.contrib.slim
 
@@ -388,7 +389,7 @@ def main(_):
             logdir=FLAGS.train_dir,
             master='',
             is_chief=True,
-            init_fn=tf_utils.get_init_fn_mobilenet(FLAGS, name_remap=NAME_REMAP),
+            init_fn=get_init_fn_mobilenet(FLAGS, name_remap=NAME_REMAP),
             summary_op=summary_op,
             number_of_steps=FLAGS.max_number_of_steps,
             log_every_n_steps=FLAGS.log_every_n_steps,

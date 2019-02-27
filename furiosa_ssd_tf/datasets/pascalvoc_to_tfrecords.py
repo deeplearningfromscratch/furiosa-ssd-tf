@@ -198,12 +198,6 @@ def run(dataset_dir, output_dir, name='voc_train', shuffling=False):
     # Dataset filenames, and shuffling.
     path = os.path.join(dataset_dir, DIRECTORY_ANNOTATIONS)
     filenames = sorted(os.listdir(path))
-    select_fnames = []
-    for _, f_name in enumerate(filenames):
-        if 'swp' not in f_name:
-            select_fnames.append(f_name)
-
-    filenames = select_fnames
 
     if shuffling:
         random.seed(RANDOM_SEED)
