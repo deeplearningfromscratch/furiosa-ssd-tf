@@ -80,7 +80,8 @@ def _process_image(directory, name):
     """
     # Read the image file.
     filename = directory + DIRECTORY_IMAGES + name + '.jpg'
-    image_data = tf.gfile.FastGFile(filename, 'r').read()
+    print(filename)
+    image_data = tf.gfile.FastGFile(filename, 'rb').read()
 
     # Read the XML annotation file.
     filename = os.path.join(directory, DIRECTORY_ANNOTATIONS, name + '.xml')
@@ -197,9 +198,17 @@ def run(dataset_dir, output_dir, name='voc_train', shuffling=False):
     # Dataset filenames, and shuffling.
     path = os.path.join(dataset_dir, DIRECTORY_ANNOTATIONS)
     filenames = sorted(os.listdir(path))
+    select_fnames = []
+    for _, f_name in enumerate(filenames):
+        if 'swp' not in f_name:
+            select_fnames.append(f_name)
+
+    filenames = select_fnames
+
     if shuffling:
         random.seed(RANDOM_SEED)
         random.shuffle(filenames)
+
 
     # Process dataset files.
     i = 0
@@ -215,6 +224,7 @@ def run(dataset_dir, output_dir, name='voc_train', shuffling=False):
 
                 filename = filenames[i]
                 img_name = filename[:-4]
+
                 _add_to_tfrecord(dataset_dir, img_name, tfrecord_writer)
                 i += 1
                 j += 1
