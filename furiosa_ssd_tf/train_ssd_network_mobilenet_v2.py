@@ -26,7 +26,6 @@ slim = tf.contrib.slim
 
 DATA_FORMAT = 'channels_last'
 
-
 # assume we fine-tuning from slim mobilenet v2 checkpoint from tensorflow github slim model zoo
 NAME_REMAP = {'/MobilenetV2_base/': '/', '/conv2d/': '/', '/depthwise_conv2d/': '/',
               '/kernel': '/weights', '/depthwise_kernel': '/depthwise_weights', '/bias': '/biases',

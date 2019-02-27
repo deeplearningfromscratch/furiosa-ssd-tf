@@ -116,7 +116,7 @@ class SSDNet(object):
             dropout_keep_prob=0.5,
             prediction_fn=slim.softmax,
             reuse=None,
-            scope='SSD512_MobilenetV2'):
+            scope='ssd_512_mobilenet_v2'):
         """Network definition.
         """
         r = ssd_net(inputs,

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 DATASET_DIR=./assets/pascalvoc/tfrecord
 TRAIN_DIR=./logs/
 CHECKPOINT_PATH=./assets/ckpt-mobilenet_v2/mobilenet_v2_1.0_224.ckpt
