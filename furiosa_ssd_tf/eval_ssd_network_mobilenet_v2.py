@@ -30,6 +30,7 @@ from nets import nets_factory
 from preprocessing import preprocessing_factory
 from flatten import flatten
 
+
 slim = tf.contrib.slim
 
 # =========================================================================== #
@@ -38,7 +39,7 @@ slim = tf.contrib.slim
 # List of recalls values at which precision is evaluated.
 LIST_RECALLS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.85,
                 0.90, 0.95, 0.96, 0.97, 0.98, 0.99]
-DATA_FORMAT = 'NHWC'
+DATA_FORMAT = 'channels_last'
 
 # =========================================================================== #
 # SSD evaluation Flags.
@@ -182,10 +183,10 @@ def main(_):
         # SSD Network + Ouputs decoding.
         # =================================================================== #
         dict_metrics = {}
-        arg_scope = ssd_net.arg_scope(data_format=DATA_FORMAT)
-        with slim.arg_scope(arg_scope):
-            predictions, localisations, logits, end_points = \
-                ssd_net.net(b_image, is_training=False)
+        # arg_scope = ssd_net.arg_scope(data_format=DATA_FORMAT)
+        # with slim.arg_scope(arg_scope):
+        predictions, localisations, logits, end_points = \
+            ssd_net.net(b_image, is_training=False)
         # Add losses functions.
         ssd_net.losses(logits, localisations,
                        b_gclasses, b_glocalisations, b_gscores)
