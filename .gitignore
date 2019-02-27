@@ -27,6 +27,7 @@ ssd-tensorflow.sublime-project
 
 # Python
 *.egg-info
+.eggs/
 
 # Setuptools
 build/

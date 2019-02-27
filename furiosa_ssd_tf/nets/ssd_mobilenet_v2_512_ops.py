@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 from tensorflow.python.keras import layers as keras_layers
 from tensorflow.python.layers import base
 from tensorflow.python.ops import init_ops

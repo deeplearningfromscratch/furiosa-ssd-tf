@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 from setuptools import setup
 
 setup_requires = [
@@ -17,6 +17,7 @@ setup(
     description='Furiosa ML Framework, setuptools version of https://github.com/balancap/SSD-Tensorflow',
     author='Sol Kim',
     author_email='skim@furiosa.ai',
+    test_suite='tests',
     packages=[
         'furiosa_ssd_tf',
         'furiosa_ssd_tf.nets',
@@ -39,6 +40,7 @@ setup(
         'deployment': 'furiosa_ssd_tf/deployment',
     },
     install_requires=install_requires,
+    tests_require=install_requires,
     setup_requires=setup_requires,
     dependency_links=dependency_links,
     project_urls={
